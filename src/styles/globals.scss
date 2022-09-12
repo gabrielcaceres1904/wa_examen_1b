@@ -1,0 +1,525 @@
+html{
+  height: auto;
+  min-height: 100%;
+}
+
+html,body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  background: linear-gradient(180deg, rgba(78,28,58,1) 19%, rgba(43,198,175,1) 100%);
+  height: auto;
+  min-height: 100%;
+  background-size: 100% 150%;
+}
+
+
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.body {
+  flex: 0.8;
+  height: 100vh;
+  color: white;
+  padding: 30px;
+}
+
+.body::-webkit-scrollbar {
+  display: none;
+}
+
+.body__info {
+  display: flex;
+  align-items: flex-end;
+  padding: 10px;
+}
+
+.body__infoText {
+  flex: 1;
+}
+
+.body__infoText > h2 {
+  font-size: 48px;
+  margin-bottom: 10px;
+}
+
+.body__infoText > p {
+  font-size: 14px;
+}
+
+.body__info > img {
+  height: 20vw;
+  margin: 0 20px;
+  box-shadow: 0 4px 60px rgba(0, 0, 0, 0.5);
+}
+
+.body__icons {
+  display: flex;
+  align-items: center;
+}
+
+.body__icons > .MuiSvgIcon-root {
+  margin-right: 20px;
+}
+
+.body__shuffle {
+  font-size: 40px !important;
+}
+
+.body__shuffle:hover {
+  transition: 100ms transform ease-in;
+  transform: scale(1.08);
+}
+
+.body__songs {
+  margin: 20px -30px;
+}
+
+.footer {
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  bottom: 0;
+  height: 65px;
+  width: 100%;
+  padding: 40px;
+  left: 0;
+  background: linear-gradient(90deg, rgba(78,28,58,1) 19%, rgba(43,198,175,1) 100%);
+}
+
+.footer__left {
+  flex: 0.5;
+  display: flex;
+  align-items: center;
+  color: white;
+  width: 300px;
+}
+
+.footer__center {
+  flex: 1.0;
+  padding: 0 100px;
+  color: white;
+  display: flex;
+  align-items: center;
+
+
+}
+
+.footer__green {
+  color: #1ed15e;
+}
+
+.footer__songInfo > h4 {
+  margin-bottom: 5px;
+}
+
+.footer__songInfo > p {
+  font-size: 12px;
+}
+
+.footer__right {
+  flex: 1.0;
+  display: flex;
+  color: white;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer__right * .MuiSlider-root {
+  color: #4e1c3a;
+}
+
+.footer__albumLogo {
+  height: 60px;
+  width: 60px;
+  margin-right: 20px;
+  object-fit: contain;
+}
+
+.footer__icon:hover,
+.footer__green:hover {
+  transition: transform 0.2s ease-in-out;
+  transform: scale(1.2) !important;
+}
+
+.sidebarOption {
+  display: flex;
+  align-items: center;
+  color: grey;
+  height: 40px;
+  cursor: pointer;
+  transition: 200ms color ease-in;
+}
+
+.sidebarOption:hover {
+  color: white;
+}
+
+.sidebarOption__icon {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.sidebarOption > p {
+  margin-top: 10px;
+  margin-left: 20px;
+  font-size: 14px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.header__left {
+  flex: 0.5;
+  background-color: white;
+  color: gray;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  min-width: 70px;
+}
+
+.header__left > input {
+  border: none;
+  width: 100%;
+}
+
+.header__right {
+  display: flex;
+  align-items: center;
+}
+
+.header__right > h4 {
+  margin-left: 10px;
+}
+
+.sidebar {
+  height: 100vh;
+  flex: 0.2;
+  color: white;
+  min-width: 230px;
+
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.sidebar__logo {
+  height: 160px;
+  padding: 10px;
+  margin-right: auto;
+}
+
+.sidebar__title {
+  margin-left: 10px;
+  font-size: 12px;
+}
+
+.sidebar > hr {
+  border: 1px solid #282828;
+  width: 90%;
+  margin: 10px auto;
+}
+
+.player__body {
+  display: flex;
+}
+
+.body__cards {
+  display: flex;
+  background-color: rgba(255,255,255,0.5);
+  border-radius: 5px;
+}
+
+.footer__pusher{
+  height: 80px;
+}
+
+$rhap_theme-color: #ffffff !default;
+$rhap_background-color: transparentize(rgba(#fff, 0.9), 0.9);
+$rhap_bar-color: #dddddd !default;
+$rhap_time-color: #ffffff !default;
+$rhap_font-family: inherit !default;
+
+.rhap_container {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+  font-family: $rhap_font-family;
+  width: 100%;
+  padding: 10px 15px;
+  background-color: $rhap_background-color;
+
+  &:focus:not(:focus-visible) {
+    outline: 0;
+  }
+
+  svg {
+    vertical-align: initial; // overwrite Bootstrap default
+  }
+}
+
+.rhap_header {
+  margin-bottom: 10px;
+}
+
+.rhap_footer {
+  margin-top: 5px;
+}
+
+.rhap_main {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+}
+
+.rhap_stacked {
+  .rhap_controls-section {
+    margin-top: 8px;
+  }
+}
+
+.rhap_horizontal {
+  flex-direction: row;
+
+  .rhap_controls-section {
+    margin-left: 8px;
+  }
+}
+
+.rhap_horizontal-reverse {
+  flex-direction: row-reverse;
+
+  .rhap_controls-section {
+    margin-right: 8px;
+  }
+}
+
+.rhap_stacked-reverse {
+  flex-direction: column-reverse;
+
+  .rhap_controls-section {
+    margin-bottom: 8px;
+  }
+}
+
+.rhap_progress-section {
+  display: flex;
+  flex: 3 1 auto;
+  align-items: center;
+}
+
+.rhap_progress-container {
+  display: flex;
+  align-items: center;
+  height: 20px;
+  flex: 1 0 auto;
+  align-self: center;
+  margin: 0 calc(10px + 1%);
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+
+  &:focus:not(:focus-visible) {
+    outline: 0;
+  }
+}
+
+.rhap_time {
+  color: $rhap_time-color;
+  font-size: 16px;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.rhap_progress-bar {
+  box-sizing: border-box;
+  position: relative;
+  z-index: 0;
+  width: 100%;
+  height: 5px;
+  background-color: $rhap_bar-color;
+  border-radius: 2px;
+}
+
+.rhap_progress-filled {
+  height: 100%;
+  position: absolute;
+  z-index: 2;
+  background-color: $rhap_theme-color;
+  border-radius: 2px;
+}
+
+.rhap_progress-bar-show-download {
+  background-color: rgba($rhap_bar-color, 0.5);
+}
+
+.rhap_download-progress {
+  height: 100%;
+  position: absolute;
+  z-index: 1;
+  background-color: $rhap_bar-color;
+  border-radius: 2px;
+}
+
+.rhap_progress-indicator {
+  box-sizing: border-box;
+  position: absolute;
+  z-index: 3;
+  width: 20px;
+  height: 20px;
+  margin-left: -10px;
+  top: -8px;
+  background: $rhap_theme-color;
+  border-radius: 50px;
+  box-shadow: rgba($rhap_theme-color, .5) 0 0 5px;
+}
+
+.rhap_controls-section {
+  display: flex;
+  flex: 1 1 auto;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.rhap_additional-controls {
+  display: flex;
+  flex: 1 0 auto;
+  align-items: center;
+}
+
+.rhap_repeat-button {
+  font-size: 26px;
+  width: 26px;
+  height: 26px;
+  color: $rhap_theme-color;
+  margin-right: 6px;
+}
+
+.rhap_main-controls {
+  flex: 0 1 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.rhap_main-controls-button {
+  margin: 0 3px;
+  color: $rhap_theme-color;
+  font-size: 35px;
+  width: 35px;
+  height: 35px;
+}
+
+.rhap_play-pause-button {
+  font-size: 40px;
+  width: 40px;
+  height: 40px;
+
+}
+
+.rhap_volume-controls {
+  display: flex;
+  flex: 1 0 auto;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.rhap_volume-button {
+  flex: 0 0 26px;
+  font-size: 26px;
+  width: 26px;
+  height: 26px;
+  color: $rhap_theme-color;
+  margin-right: 6px;
+}
+
+.rhap_volume-container {
+  display: flex;
+  align-items: center;
+  flex: 0 1 100px;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.rhap_volume-bar-area {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 14px;
+  cursor: pointer;
+
+  &:focus:not(:focus-visible) {
+    outline: 0;
+  }
+}
+
+.rhap_volume-bar {
+  box-sizing: border-box;
+  position: relative;
+  width: 100%;
+  height: 4px;
+  background: $rhap_bar-color;
+  border-radius: 2px;
+}
+
+.rhap_volume-indicator {
+  box-sizing: border-box;
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  margin-left: -6px;
+  left: 0;
+  top: -4px;
+  background: $rhap_theme-color;
+  opacity: 0.9;
+  border-radius: 50px;
+  box-shadow: rgba($rhap_theme-color, .5) 0 0 3px;
+  cursor: pointer;
+
+  &:hover {
+    opacity: .9;
+  }
+}
+
+.rhap_volume-filled {
+  height: 100%;
+  position: absolute;
+  z-index: 2;
+  background-color: $rhap_theme-color;
+  border-radius: 2px;
+}
+
+/* Utils */
+.rhap_button-clear {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  overflow: hidden;
+  cursor: pointer;
+
+  &:hover {
+    opacity: .9;
+    transition-duration: .2s;
+  }
+
+  &:active {
+    opacity: .95;
+  }
+
+  &:focus:not(:focus-visible) {
+    outline: 0;
+  }
+}

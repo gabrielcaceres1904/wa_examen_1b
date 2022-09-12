@@ -1,21 +1,23 @@
 import * as React from 'react';
-import Layout from "../components/Layout";
-import {Typography} from "@mui/material";
+import Sidebar from "../components/Sidebar";
+import Body from "../components/Body";
+import Footer from "../components/Footer";
+import {createContext} from "react";
+
+export const AppContext = createContext(null);
 
 
+function Index() {
 
-
-
-
-export default function Inicio() {
     return (
-        <Layout title_head="Inicio">
-            <Typography variant="h2">
-                Soy una pagina de Inicio
-            </Typography>
-            <Typography variant="body1">
-                👍 Ignoreme y continue con su camino
-            </Typography>
-        </Layout>
+        <div className="player">
+            <div className="player__body">
+                <Sidebar />
+                <Body />
+            </div>
+            <Footer/>
+        </div>
     );
 }
+
+export default Index
